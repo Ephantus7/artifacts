@@ -1,7 +1,7 @@
 on:
     push:
 jobs:
-    build:
+    create:
         runs-on: ubuntu-latest
         steps:
             - name: Create a text file
@@ -18,7 +18,7 @@ jobs:
                   
     print:
         runs-on: ubuntu-latest
-        needs: build
+        needs: create
         steps:
             - name: Download the Build Artifact
               uses: actions/download-artifact@v3
