@@ -12,7 +12,7 @@ jobs:
               uses: actions/upload-artifact@v3
               with:
                   name: time-artifact # optional, default is artifact
-                  path: times.txt
+                  path: time.txt
                   if-no-files-found: error # optional, default is warn
                   retention-days: 1 # optional, maximum 90 days unless modified in settings
         
