@@ -8,12 +8,39 @@ jobs:
       - name: Create a text file
         run: |
           echo "The time is $(date -u)" > time.txt
+          echo "The time is $(date -u)" > time2.txt
+          echo "The time is $(date -u)" > time3.txt
+          echo "The time is $(date -u)" > time4.txt
 
       - name: Upload the text file as an artifact
         uses: actions/upload-artifact@v3
         with:
           name: time-artifact # optional, default is artifact
           path: time.txt
+          if-no-files-found: error # optional, default is warn
+          retention-days: 1 # optional, maximum 90 days
+
+      - name: Upload the text file as an artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: time-artifact # optional, default is artifact
+          path: time2.txt
+          if-no-files-found: error # optional, default is warn
+          retention-days: 1 # optional, maximum 90 days
+        
+      - name: Upload the text file as an artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: time-artifact # optional, default is artifact
+          path: time3.txt
+          if-no-files-found: error # optional, default is warn
+          retention-days: 1 # optional, maximum 90 days
+        
+      - name: Upload the text file as an artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: time-artifact # optional, default is artifact
+          path: time4.txt
           if-no-files-found: error # optional, default is warn
           retention-days: 1 # optional, maximum 90 days
         
