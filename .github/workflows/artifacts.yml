@@ -25,7 +25,7 @@ jobs:
             uses: actions/download-artifact@v3
             id: download-all-artifacts
             with:
-                name: my-artifact.txt
+                name: my-artifact
 
           - name: The download path for all artifacts
             run: echo ${{ steps.download-all-artifacts.outputs.download-path }}
