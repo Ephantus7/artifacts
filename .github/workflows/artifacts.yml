@@ -23,7 +23,10 @@ jobs:
         steps:
             - name: Download the artifact created by the create job
               uses: actions/download-artifact@v3
+              id: download-artifact
               with:
                   name: time-artifact
-            - name: Print the contents of the text file
-              run: cat time.txt
+                  path: ~/time.txt
+                  
+            - name: The download path
+              run: echo ${{ steps.download-artifact.outputs.download-path }}
