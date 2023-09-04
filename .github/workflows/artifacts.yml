@@ -7,10 +7,7 @@ jobs:
     steps:
       - name: Create a text file
         run: |
-          echo "The time is $(date -u)" > time.txt
-          echo "The time is $(date -u)" > time2.txt
-          echo "The time is $(date -u)" > time3.txt
-          echo "The time is $(date -u)" > time4.txt
+          echo "The time is $(date -u)" > my-artifact.txt
 
       - name: Upload the text file as an artifact
         uses: actions/upload-artifact@v3
