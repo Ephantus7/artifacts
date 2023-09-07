@@ -25,7 +25,6 @@ jobs:
             uses: actions/download-artifact@v3
             with:
                 name: time-artifact
-                path: time.txt
           - name: Print the contents of the text file
             run: cat time.txt
 
