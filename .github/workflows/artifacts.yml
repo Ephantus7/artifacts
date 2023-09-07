@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Create a text file containing the current time
         run: |
-          echo "The time is $(time -u)" > time.txt
+          echo "The time is $(date +"%H:%M" -u)" > time.txt
 
       - name: Upload the text file as an artifact
         uses: actions/upload-artifact@v3
