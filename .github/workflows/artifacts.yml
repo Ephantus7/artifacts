@@ -5,15 +5,15 @@ jobs:
   create:
     runs-on: ubuntu-latest
     steps:
-      - name: Create a text file
+      - name: Create a text file containing the current time
         run: |
-          echo "The time is $(time -u)" > my-artifact.txt
+          echo "The time is $(time -u)" > time.txt
 
       - name: Upload the text file as an artifact
         uses: actions/upload-artifact@v3
         with:
-          name: my-artifact
-          path: my-artifact.txt
+          name: time-artifact
+          path: time.txt
           if-no-files-found: error # optional, default is warn
           retention-days: 1 # optional, maximum 90 days
         
