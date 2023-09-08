@@ -13,5 +13,5 @@ jobs:
         if: failure()
         with:
           name: failure-artifact
-          path: ~
+          path: ~/*.log
     
