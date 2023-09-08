@@ -7,11 +7,14 @@ jobs:
     steps:
       - name: Some previous step
         run: ech "I am going to fail"
+
+      - name: Collect logs
+        run: gh run --log-failed > errors.txt
         
       - name: Upload on failure
         uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: failure-artifact
-          path: /*.log
+          path: errors.txt
     
