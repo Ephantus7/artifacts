@@ -16,5 +16,5 @@ jobs:
         with:
           name: failure-artifact
           path: |
-            /var/log/**/*.log
+            /var/log/syslog
     
