@@ -6,7 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Some previous step
-        run: ech "I am going to fail"
+        run: |
+          ls /var/log
+          ech "I am going to fail"
 
       - name: Upload on failure
         uses: actions/upload-artifact@v3
@@ -14,6 +16,5 @@ jobs:
         with:
           name: failure-artifact
           path: |
-            /var/log/syslog
-            /var/log/messages
+            /var/log/**/*.log
     
